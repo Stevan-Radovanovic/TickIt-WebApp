@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  authKey = '',
+  production: true,
 };
