@@ -1,1 +1,64 @@
-<p>header works!</p>
+<nav class="navbar is-black" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item" id="logo">
+      <figure class="image">
+        <img src="" alt="Logo Placeholder" width="112" height="28" />
+      </figure>
+    </a>
+
+    <a
+      role="button"
+      class="navbar-burger burger"
+      aria-label="menu"
+      aria-expanded="false"
+      data-target="navbarBasicExample"
+      #burger
+      (click)="onBurgerClick()"
+      [ngClass]="{ 'is-active': toggleActive == true }"
+    >
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div
+    id="navbarBasicExample"
+    class="navbar-menu"
+    [ngClass]="{ 'is-active': toggleActive == true }"
+  >
+    <div class="navbar-start">
+      <a class="navbar-item has-text-centered">
+        Browse Events (User)
+      </a>
+
+      <a class="navbar-item has-text-centered">
+        Change Events (Admin)
+      </a>
+
+      <a class="navbar-item has-text-centered">
+        File Complaint
+      </a>
+
+      <a class="navbar-item has-text-centered">
+        Order History (?)
+      </a>
+    </div>
+
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <div class="buttons" style="justify-content: center;">
+          <a class="button">
+            Sign Up
+          </a>
+          <a class="button">
+            Sign In
+          </a>
+          <a class="button">
+            Log out
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -3,13 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  toggleActive = false;
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onBurgerClick() {
+    this.toggleActive = !this.toggleActive;
   }
-
 }

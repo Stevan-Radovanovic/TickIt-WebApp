@@ -1,0 +1,22 @@
+a.button {
+  background-color: #7b1fa2;
+  color: white;
+}
+
+div#navbarBasicExample {
+  background-color: hsl(0, 0%, 4%);
+}
+
+a.navbar-item {
+  color: white;
+  font-weight: 500;
+  font-size: large;
+}
+
+a.navbar-item:hover {
+  background-color: #7b1fa2;
+}
+
+a#logo {
+  background-color: #7b1fa2;
+}
