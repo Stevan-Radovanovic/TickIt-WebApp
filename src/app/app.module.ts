@@ -5,18 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
-import { HeadfootModule } from './headfoot/headfoot.module';
 import { AuthModule } from './auth/auth.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './headfoot/footer/footer.component';
+import { HeaderComponent } from './headfoot/header/header.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [HeaderComponent, FooterComponent, AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
-    HeadfootModule,
     ReactiveFormsModule,
     AuthModule,
   ],

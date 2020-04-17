@@ -10,19 +10,17 @@ export class LogInComponent implements OnInit {
   constructor() {}
 
   logInForm: FormGroup;
-
-  ngOnInit(): void {
-    this.initForm();
-  }
+  errorMessage: string = null;
 
   initForm() {
     this.logInForm = new FormGroup({
       email: new FormControl('', [Validators.email, Validators.required]),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(8),
-      ]),
+      password: new FormControl('', [Validators.required]),
     });
+  }
+
+  ngOnInit(): void {
+    this.initForm();
   }
 
   onSubmit() {}
