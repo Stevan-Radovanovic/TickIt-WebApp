@@ -12,6 +12,6 @@ export class PageNotAllowedComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.router.navigate(['../login']);
-    }, 5000);
+    }, 2000);
   }
 }
