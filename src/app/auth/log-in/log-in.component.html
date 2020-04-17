@@ -1,1 +1,53 @@
-<p>log-in works!</p>
+<hr />
+<div class="columns">
+  <div class="column is-6 is-offset-3 card" id="formBorder">
+    <form [formGroup]="logInForm">
+      <div class="field">
+        <div class="control">
+          <label class="label">E-mail</label>
+          <input
+            type="email"
+            class="input"
+            placeholder="Enter your e-mail"
+            formControlName="email"
+          />
+          <p
+            *ngIf="
+              !logInForm.controls.email.valid &&
+              logInForm.controls.email.touched
+            "
+            class="help is-danger"
+          >
+            Wrong E-mail format
+          </p>
+        </div>
+      </div>
+      <div class="field">
+        <div class="control">
+          <label class="label">Password</label>
+          <input
+            class="input"
+            type="password"
+            placeholder="Enter your password"
+            formControlName="password"
+          />
+          <p
+            class="help is-danger"
+            *ngIf="
+              !logInForm.controls.password.valid &&
+              logInForm.controls.password.touched
+            "
+          >
+            Password must have a minimum of 8 characters
+          </p>
+        </div>
+      </div>
+      <div class="control">
+        <button [disabled]="!logInForm.valid" type="submit" class="button">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<hr />
