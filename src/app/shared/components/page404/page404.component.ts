@@ -11,7 +11,7 @@ export class Page404Component implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => {
-      this.router.navigate(['../login']);
+      this.router.navigate(['../home']);
     }, 3000);
   }
 }
