@@ -4,8 +4,13 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { LogInComponent } from './auth/log-in/log-in.component';
 import { Page404Component } from './shared/components/page404/page404.component';
 import { PageNotAllowedComponent } from './shared/components/page-not-allowed/page-not-allowed.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  {
+    path: 'home',
+    component: HomeComponent,
+  },
   {
     path: 'signup',
     component: SignUpComponent,
@@ -17,7 +22,7 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'login',
+    redirectTo: 'home',
   },
   {
     path: 'pageNotFound',

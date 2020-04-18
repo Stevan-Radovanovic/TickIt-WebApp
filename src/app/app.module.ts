@@ -9,9 +9,10 @@ import { AuthModule } from './auth/auth.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './headfoot/footer/footer.component';
 import { HeaderComponent } from './headfoot/header/header.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, AppComponent],
+  declarations: [HeaderComponent, FooterComponent, AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
