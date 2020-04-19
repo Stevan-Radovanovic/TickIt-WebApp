@@ -9,7 +9,13 @@ import { SportEvent } from 'src/app/shared/models/sportevent.model';
 export class EventSingleComponent implements OnInit {
   @Input() selectedEvent: SportEvent;
 
+  selected = false;
+
   constructor() {}
+
+  onChangeModal() {
+    this.selected = !this.selected;
+  }
 
   ngOnInit(): void {}
 }
