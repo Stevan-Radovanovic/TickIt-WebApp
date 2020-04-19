@@ -12,6 +12,13 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
+    path: 'events',
+    loadChildren: () =>
+      import('./sport-event/sport-event.module').then(
+        (m) => m.SportEventModule
+      ),
+  },
+  {
     path: 'signup',
     component: SignUpComponent,
   },

@@ -1,0 +1,10 @@
+<hr />
+<div class="columns is-multiline">
+  <div
+    class="column is-4 is-offset-1 card"
+    *ngFor="let event of events"
+    style="border: solid black 1px;"
+  >
+    <app-event-single [selectedEvent]="event"></app-event-single>
+  </div>
+</div>
