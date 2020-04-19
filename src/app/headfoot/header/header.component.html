@@ -32,20 +32,8 @@
     [ngClass]="{ 'is-active': toggleActive == true }"
   >
     <div class="navbar-start">
-      <a class="navbar-item has-text-centered">
-        Browse Events (User)
-      </a>
-
-      <a class="navbar-item has-text-centered">
-        Change Events (Admin)
-      </a>
-
-      <a class="navbar-item has-text-centered">
-        File Complaint
-      </a>
-
-      <a class="navbar-item has-text-centered">
-        Order History (?)
+      <a class="navbar-item has-text-centered" routerLink="events">
+        Browse Events
       </a>
     </div>
 

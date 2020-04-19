@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SportEvent } from 'src/app/shared/models/sportevent.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-event-single',
@@ -11,10 +12,14 @@ export class EventSingleComponent implements OnInit {
 
   selected = false;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   onChangeModal() {
     this.selected = !this.selected;
+  }
+
+  onBuyTickets() {
+    this.router.navigate(['../' + this.selectedEvent.id.toString()]);
   }
 
   ngOnInit(): void {}
