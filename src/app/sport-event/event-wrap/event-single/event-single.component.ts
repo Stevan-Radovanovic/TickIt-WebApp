@@ -18,9 +18,5 @@ export class EventSingleComponent implements OnInit {
     this.selected = !this.selected;
   }
 
-  onBuyTickets() {
-    this.router.navigate(['../' + this.selectedEvent.id.toString()]);
-  }
-
   ngOnInit(): void {}
 }
