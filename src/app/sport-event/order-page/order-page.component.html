@@ -1,6 +1,16 @@
 <div class="columns is-centered" style="margin-bottom: 2cm; margin-top: 2cm;">
   <div class="column is-4 card">
     <p>{{ selectedEvent.name }}</p>
+    <p>{{ selectedEvent.date }}</p>
+    <h4>BSelect a Zone</h4>
+    <mat-form-field>
+      <mat-label>Zones</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let zone of zones" [value]="zone.name">
+          {{ zone.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
   </div>
 </div>
 <app-pay-pal [selected]="selectedEvent"></app-pay-pal>

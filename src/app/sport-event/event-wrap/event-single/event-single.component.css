@@ -7,3 +7,12 @@ a.button {
   color: #7b1fa2;
   font-family: 'Permanent Marker', cursive;
 }
+
+.wrap {
+  background-size: cover;
+}
+
+.modalstyle {
+  color: white;
+  font-family: 'Permanent Marker', cursive;
+}

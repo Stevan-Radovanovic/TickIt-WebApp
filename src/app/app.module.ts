@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './headfoot/footer/footer.component';
 import { HeaderComponent } from './headfoot/header/header.component';
 import { HomeComponent } from './home/home.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, AppComponent, HomeComponent],
@@ -20,6 +21,7 @@ import { HomeComponent } from './home/home.component';
     SharedModule,
     ReactiveFormsModule,
     AuthModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

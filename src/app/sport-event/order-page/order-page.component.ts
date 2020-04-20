@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SportEvent } from '../../shared/models/sportevent.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DummyService } from 'src/app/shared/services/dummy.service';
+import { Zone } from 'src/app/shared/models/zone.model';
 
 @Component({
   selector: 'app-order-page',
@@ -16,6 +17,7 @@ export class OrderPageComponent implements OnInit {
   ) {}
 
   selectedEvent: SportEvent = null;
+  zones: Zone[] = [];
 
   ngOnInit(): void {
     // tslint:disable-next-line: no-string-literal
@@ -23,5 +25,6 @@ export class OrderPageComponent implements OnInit {
     if (this.selectedEvent === null || this.selectedEvent === undefined) {
       this.router.navigateByUrl('/pageNotFound');
     }
+    this.zones = this.selectedEvent.zones;
   }
 }

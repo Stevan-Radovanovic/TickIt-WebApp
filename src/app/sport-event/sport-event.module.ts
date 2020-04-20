@@ -5,9 +5,15 @@ import { SportEventRoutingModule } from './sport-event-routing.module';
 import { EventSingleComponent } from './event-wrap/event-single/event-single.component';
 import { OrderPageComponent } from './order-page/order-page.component';
 import { SharedModule } from '../shared/shared.module';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [EventWrapComponent, EventSingleComponent, OrderPageComponent],
-  imports: [CommonModule, SportEventRoutingModule, SharedModule],
+  imports: [
+    CommonModule,
+    SportEventRoutingModule,
+    SharedModule,
+    MatSelectModule,
+  ],
 })
 export class SportEventModule {}

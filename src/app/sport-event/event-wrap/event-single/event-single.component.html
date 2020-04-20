@@ -17,9 +17,13 @@
         aria-label="close"
       ></button>
     </header>
-    <section class="modal-card-body" style="background-color: black;">
-      {{ selectedEvent.date }}
-      {{ selectedEvent.description }}
+    <section
+      class="modal-card-body wrap"
+      [style.background-image]="'
+        url(' + selectedEvent.imageUrl + ')'"
+    >
+      <h1 class="subtitle modalstyle">{{ selectedEvent.date }}</h1>
+      <p style="color: white;">{{ selectedEvent.description }}</p>
     </section>
     <footer class="modal-card-foot">
       <a class="button" routerLink="{{ selectedEvent.id }}">Buy Tickets</a>

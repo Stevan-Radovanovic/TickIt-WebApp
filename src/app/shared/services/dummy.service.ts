@@ -11,7 +11,7 @@ export class DummyService {
       0,
       'Tekma1',
       'Datum1',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
@@ -19,7 +19,7 @@ export class DummyService {
       1,
       'Tekma2',
       'Datum2',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
@@ -27,7 +27,7 @@ export class DummyService {
       2,
       'Tekma3',
       'Datum3',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
@@ -35,7 +35,7 @@ export class DummyService {
       3,
       'Tekma4',
       'Datum4',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
@@ -43,7 +43,7 @@ export class DummyService {
       4,
       'Tekma5',
       'Datum5',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
@@ -51,7 +51,7 @@ export class DummyService {
       5,
       'Tekma6',
       'Datum6',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
@@ -59,7 +59,7 @@ export class DummyService {
       6,
       'Tekma7',
       'Datum7',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
@@ -67,7 +67,7 @@ export class DummyService {
       7,
       'Tekma8',
       'Datum8',
-      '../../assets/logo.png',
+      '../../assets/NBA-5.jpg',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
