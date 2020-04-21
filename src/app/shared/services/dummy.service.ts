@@ -9,65 +9,75 @@ export class DummyService {
   events: SportEvent[] = [
     new SportEvent(
       0,
-      'Tekma1',
+      'Newcastle vs Partizan [Football]',
       'Datum1',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
-      [new Zone('Jug', 100), new Zone('Sever', 200)]
+      [
+        new Zone('South', 100),
+        new Zone('North', 200),
+        new Zone('West', 300),
+        new Zone('East', 300),
+      ]
     ),
     new SportEvent(
       1,
-      'Tekma2',
+      'Partizan vs Maccabi [Basketball]',
       'Datum2',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
-      [new Zone('Jug', 100), new Zone('Sever', 200)]
+      [
+        new Zone('South', 100),
+        new Zone('North', 200),
+        new Zone('West', 300),
+        new Zone('East', 300),
+      ]
     ),
     new SportEvent(
       2,
-      'Tekma3',
+      'Cibona vs Partizan [Basketball]',
       'Datum3',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
     new SportEvent(
       3,
-      'Tekma4',
+      'Partizan - Barcelona [Basketball]',
       'Datum4',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
     new SportEvent(
       4,
-      'Tekma5',
+      'Manchester United - Manchester City [Football]',
       'Datum5',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
     new SportEvent(
       5,
-      'Tekma6',
+      'Qpr - Manchester City [Football]',
       'Datum6',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
     new SportEvent(
       6,
-      'Tekma7',
+      'Manchester City - West Ham [Football]',
       'Datum7',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),
     new SportEvent(
       7,
-      'Tekma8',
+      'Golden State - Cleveland [Basketball]',
       'Datum8',
-      '../../assets/NBA-5.jpg',
+      '../../assets/logo.png',
       'ad;lakdas;ldkasl;dkasd;laskd;laskdas;ldkas;ldka',
       [new Zone('Jug', 100), new Zone('Sever', 200)]
     ),

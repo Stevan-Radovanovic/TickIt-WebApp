@@ -6,14 +6,22 @@ import { EventSingleComponent } from './event-wrap/event-single/event-single.com
 import { OrderPageComponent } from './order-page/order-page.component';
 import { SharedModule } from '../shared/shared.module';
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
+import { OrderSuccessComponent } from './order-success/order-success.component';
 
 @NgModule({
-  declarations: [EventWrapComponent, EventSingleComponent, OrderPageComponent],
+  declarations: [
+    EventWrapComponent,
+    EventSingleComponent,
+    OrderPageComponent,
+    OrderSuccessComponent,
+  ],
   imports: [
     CommonModule,
     SportEventRoutingModule,
     SharedModule,
     MatSelectModule,
+    FormsModule,
   ],
 })
 export class SportEventModule {}

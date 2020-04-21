@@ -1,15 +1,1 @@
-.card {
-  background: url(../../assets/black.jpg) no-repeat;
-  background-size: cover;
-  border: 7px inset #7b1fa2;
-  border-radius: 14px;
-  background-color: hsl(0, 0%, 96%);
-}
 
-h1 {
-  color: white;
-}
-
-p {
-  color: white;
-}

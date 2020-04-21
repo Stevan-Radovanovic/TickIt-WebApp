@@ -10,6 +10,7 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    data: { animation: 'is1' },
   },
   {
     path: 'events',
@@ -17,14 +18,17 @@ const routes: Routes = [
       import('./sport-event/sport-event.module').then(
         (m) => m.SportEventModule
       ),
+    data: { animation: 'is2' },
   },
   {
     path: 'signup',
     component: SignUpComponent,
+    data: { animation: 'is3' },
   },
   {
     path: 'login',
     component: LogInComponent,
+    data: { animation: 'is4' },
   },
   {
     path: '',
@@ -34,10 +38,12 @@ const routes: Routes = [
   {
     path: 'pageNotFound',
     component: Page404Component,
+    data: { animation: 'is5' },
   },
   {
     path: 'pageNotAllowed',
     component: PageNotAllowedComponent,
+    data: { animation: 'is5' },
   },
   {
     path: '**',

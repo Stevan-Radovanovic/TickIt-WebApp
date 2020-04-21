@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { SportEvent } from '../../shared/models/sportevent.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DummyService } from 'src/app/shared/services/dummy.service';
@@ -16,8 +16,10 @@ export class OrderPageComponent implements OnInit {
     private router: Router
   ) {}
 
+  cummulativeValue = 0;
   selectedEvent: SportEvent = null;
   zones: Zone[] = [];
+  selectedOption: string;
 
   ngOnInit(): void {
     // tslint:disable-next-line: no-string-literal
@@ -26,5 +28,13 @@ export class OrderPageComponent implements OnInit {
       this.router.navigateByUrl('/pageNotFound');
     }
     this.zones = this.selectedEvent.zones;
+  }
+
+  onAdd() {
+    const stringArray = this.selectedOption.split(' ');
+    const amount = +stringArray.pop();
+    console.log(amount);
+    console.log(stringArray);
+    this.cummulativeValue = this.cummulativeValue + amount;
   }
 }

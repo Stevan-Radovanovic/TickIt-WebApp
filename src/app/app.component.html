@@ -1,4 +1,6 @@
 <app-header></app-header>
-<router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>
 <app-banner [quote]="'You buy, we supply!'"></app-banner>
 <app-footer></app-footer>

@@ -8,3 +8,9 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+.card {
+  border: 7px inset #7b1fa2;
+  border-radius: 14px;
+  background-color: hsl(0, 0%, 96%);
+}

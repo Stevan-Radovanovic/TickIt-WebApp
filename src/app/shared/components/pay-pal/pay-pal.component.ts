@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { SportEvent } from '../../models/sportevent.model';
+import { Router } from '@angular/router';
 
 declare var paypal;
 
@@ -12,10 +13,10 @@ export class PayPalComponent implements OnInit {
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
 
   @Input() selected: SportEvent = null;
-
+  @Input() amount = 0;
   paidFor = false;
 
-  constructor() {
+  constructor(private router: Router) {
     console.log(this.selected);
   }
 
@@ -29,7 +30,7 @@ export class PayPalComponent implements OnInit {
                 description: this.selected.name,
                 amount: {
                   currency_code: 'EUR',
-                  value: 30,
+                  value: this.amount,
                 },
               },
             ],
@@ -38,7 +39,7 @@ export class PayPalComponent implements OnInit {
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
           this.paidFor = true;
-          console.log(order);
+          this.router.navigateByUrl('/events/success');
         },
         onError: (err) => {
           console.log(err);

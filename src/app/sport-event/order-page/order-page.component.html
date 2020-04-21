@@ -2,15 +2,23 @@
   <div class="column is-4 card">
     <p>{{ selectedEvent.name }}</p>
     <p>{{ selectedEvent.date }}</p>
-    <h4>BSelect a Zone</h4>
-    <mat-form-field>
-      <mat-label>Zones</mat-label>
-      <mat-select>
-        <mat-option *ngFor="let zone of zones" [value]="zone.name">
-          {{ zone.name }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <h4>Select a Zone:</h4>
+    <div class="select" aria-placeholder="Choose a zone">
+      <select [(ngModel)]="selectedOption">
+        <option *ngFor="let zone of zones"
+          >{{ zone.name }} | Price: {{ zone.amount }}</option
+        >
+      </select>
+    </div>
+    <a
+      class="button"
+      style="background-color: #7b1fa2; color: white;"
+      (click)="onAdd()"
+      >Add to Cart</a
+    >
   </div>
 </div>
-<app-pay-pal [selected]="selectedEvent"></app-pay-pal>
+<app-pay-pal
+  [selected]="selectedEvent"
+  [amount]="cummulativeValue"
+></app-pay-pal>
