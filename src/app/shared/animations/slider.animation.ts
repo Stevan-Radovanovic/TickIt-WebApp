@@ -4,9 +4,7 @@ import {
   style,
   query,
   group,
-  animateChild,
   animate,
-  keyframes,
 } from '@angular/animations';
 
 export const slider = trigger('routeAnimations', [
