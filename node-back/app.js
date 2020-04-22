@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const userRoutes = require('./routes/users');
+
 const app = express();
 
 app.use(bodyParser.json());
@@ -22,10 +24,6 @@ app.use((req, res, next) => {
   next();
 });
 
-//Getting Sports Events
-app.get('/sportEvents', (req, res, next) => {
-  const events = 'This should be an array from the db';
-  res.send({ message: 'Fetch all sport events in the DB', events: events });
-});
+app.use('/users', userRoutes);
 
 module.exports = app;

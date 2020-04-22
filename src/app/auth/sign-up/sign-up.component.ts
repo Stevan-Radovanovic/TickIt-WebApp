@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthData } from 'src/app/shared/models/authData.model';
+import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  constructor() {}
+  constructor(private auth: AuthService) {}
 
   signUpForm: FormGroup;
 
@@ -25,5 +27,12 @@ export class SignUpComponent implements OnInit {
     });
   }
 
-  onSubmit() {}
+  onSubmit() {
+    const email = this.signUpForm.controls.email.value;
+    const password = this.signUpForm.controls.password.value;
+    this.auth.signUp(email, password).subscribe((response) => {
+      // Navigate somewhere
+      console.log(response);
+    });
+  }
 }
