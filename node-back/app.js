@@ -1,9 +1,22 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const userRoutes = require('./routes/users');
 
 const app = express();
+
+mongoose
+  .connect(
+    'mongodb+srv://stevan:Stevan.1@tickitcluster-trhkx.mongodb.net/tick-it?retryWrites=true&w=majority',
+    { useNewUrlParser: true }
+  )
+  .then(() => {
+    console.log('Connected to the database!');
+  })
+  .catch(() => {
+    console.log('Connection to the database failed');
+  });
 
 app.use(bodyParser.json());
 
