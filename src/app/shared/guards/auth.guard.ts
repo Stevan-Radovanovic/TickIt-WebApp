@@ -7,12 +7,13 @@ import {
   Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthGuard implements CanActivateChild {
-  constructor(private route: Router) {}
+  constructor(private route: Router, private auth: AuthService) {}
 
   canActivateChild(
     next: ActivatedRouteSnapshot,
@@ -22,10 +23,10 @@ export class AuthGuard implements CanActivateChild {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (localStorage.getItem('userData') !== null) {
+    if (this.auth.isAuth === true) {
       return true;
     } else {
-      this.route.navigateByUrl('/pageNotFound');
+      return this.route.navigateByUrl('/pageNotAllowed');
     }
   }
 }

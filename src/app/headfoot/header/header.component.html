@@ -31,7 +31,7 @@
     class="navbar-menu"
     [ngClass]="{ 'is-active': toggleActive == true }"
   >
-    <div class="navbar-start">
+    <div *ngIf="authenticated" class="navbar-start">
       <a class="navbar-item has-text-centered" routerLink="events">
         Browse Events
       </a>
@@ -40,13 +40,13 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons" style="justify-content: center;">
-          <a class="button" routerLink="signup">
+          <a *ngIf="!authenticated" class="button" routerLink="signup">
             Sign Up
           </a>
-          <a class="button" routerLink="login">
+          <a *ngIf="!authenticated" class="button" routerLink="login">
             Log In
           </a>
-          <a class="button">
+          <a *ngIf="authenticated" class="button" (click)="onLogout()">
             Log out
           </a>
         </div>

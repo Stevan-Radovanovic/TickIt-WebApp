@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthData } from 'src/app/shared/models/authData.model';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -9,7 +10,7 @@ import { AuthService } from 'src/app/shared/services/auth.service';
   styleUrls: ['./sign-up.component.css'],
 })
 export class SignUpComponent implements OnInit {
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private router: Router) {}
 
   signUpForm: FormGroup;
 
@@ -31,7 +32,7 @@ export class SignUpComponent implements OnInit {
     const email = this.signUpForm.controls.email.value;
     const password = this.signUpForm.controls.password.value;
     this.auth.signUp(email, password).subscribe((response) => {
-      // Navigate somewhere
+      this.router.navigateByUrl('/home');
       console.log(response);
     });
   }

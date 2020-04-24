@@ -11,6 +11,8 @@ import { FooterComponent } from './headfoot/footer/footer.component';
 import { HeaderComponent } from './headfoot/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { MatSelectModule } from '@angular/material/select';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from './shared/services/token.interceptor';
 
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, AppComponent, HomeComponent],
@@ -23,7 +25,9 @@ import { MatSelectModule } from '@angular/material/select';
     AuthModule,
     MatSelectModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

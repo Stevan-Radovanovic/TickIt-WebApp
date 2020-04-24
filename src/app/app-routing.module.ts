@@ -5,6 +5,8 @@ import { LogInComponent } from './auth/log-in/log-in.component';
 import { Page404Component } from './shared/components/page404/page404.component';
 import { PageNotAllowedComponent } from './shared/components/page-not-allowed/page-not-allowed.component';
 import { HomeComponent } from './home/home.component';
+import { AlreadyLogedGuard } from './shared/guards/already-loged.guard';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -19,16 +21,19 @@ const routes: Routes = [
         (m) => m.SportEventModule
       ),
     data: { animation: 'is2' },
+    canActivateChild: [AuthGuard],
   },
   {
     path: 'signup',
     component: SignUpComponent,
     data: { animation: 'is3' },
+    canActivate: [AlreadyLogedGuard],
   },
   {
     path: 'login',
     component: LogInComponent,
     data: { animation: 'is4' },
+    canActivate: [AlreadyLogedGuard],
   },
   {
     path: '',
@@ -38,12 +43,10 @@ const routes: Routes = [
   {
     path: 'pageNotFound',
     component: Page404Component,
-    data: { animation: 'is5' },
   },
   {
     path: 'pageNotAllowed',
     component: PageNotAllowedComponent,
-    data: { animation: 'is5' },
   },
   {
     path: '**',

@@ -1,20 +1,21 @@
 import { Injectable } from '@angular/core';
 import {
-  CanActivateChild,
+  CanActivate,
   ActivatedRouteSnapshot,
   RouterStateSnapshot,
   UrlTree,
   Router,
 } from '@angular/router';
 import { Observable } from 'rxjs';
+import { AuthService } from '../services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AlreadyLogedGuard implements CanActivateChild {
-  constructor(private route: Router) {}
+export class AlreadyLogedGuard implements CanActivate {
+  constructor(private route: Router, private auth: AuthService) {}
 
-  canActivateChild(
+  canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ):
@@ -22,10 +23,10 @@ export class AlreadyLogedGuard implements CanActivateChild {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (localStorage.getItem('userData') === null) {
+    if (localStorage.getItem('token') === null) {
       return true;
     } else {
-      this.route.navigateByUrl('/pageNotFound');
+      return this.route.navigateByUrl('/pageNotAllowed');
     }
   }
 }

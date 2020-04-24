@@ -14,7 +14,7 @@
 <hr />
 <div class="columns">
   <div class="column is-6 is-offset-3 card" id="formBorder">
-    <form [formGroup]="logInForm">
+    <form [formGroup]="logInForm" (submit)="onSubmit()">
       <div class="field">
         <div class="control">
           <label class="label">E-mail</label>
