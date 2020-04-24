@@ -32,7 +32,7 @@ export class AuthService {
         const expDate = new Date(new Date().getTime() + 3600000);
         this.saveAuthData(this.token, expDate);
         this.isAuth = true;
-        this.autoLogOut();
+        this.autoLogOut(36000000);
         this.router.navigateByUrl('/home');
       });
   }
@@ -46,19 +46,24 @@ export class AuthService {
     this.router.navigateByUrl('/login');
   }
 
-  autoLogOut() {
+  autoLogOut(interval: number) {
     this.timer = setTimeout(() => {
       this.logOut();
-    }, 3600000);
+    }, interval);
   }
 
   autoLogIn() {
-    // TBC
-    if (localStorage.getItem('token') !== null) {
-      this.token = localStorage.getItem('token');
-      this.tokenSubject.next(true);
+    const authInfo = this.getAuthData();
+    if (!authInfo) {
+      return;
+    }
+    const now = new Date();
+    const expiresIn = authInfo.expDate.getTime() - now.getTime();
+    if (expiresIn > 0) {
+      this.token = authInfo.token;
       this.isAuth = true;
-      this.autoLogOut();
+      this.autoLogOut(expiresIn);
+      this.tokenSubject.next(true);
     }
   }
 
@@ -70,5 +75,18 @@ export class AuthService {
   clearAuthData() {
     localStorage.removeItem('token');
     localStorage.removeItem('expDate');
+  }
+
+  getAuthData() {
+    const tok = localStorage.getItem('token');
+    const expDate = localStorage.getItem('expDate');
+    if (!tok || !expDate) {
+      return;
+    }
+
+    return {
+      token: tok,
+      expDate: new Date(expDate),
+    };
   }
 }

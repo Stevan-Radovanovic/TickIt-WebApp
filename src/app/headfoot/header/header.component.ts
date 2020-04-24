@@ -14,6 +14,7 @@ export class HeaderComponent implements OnInit {
   authenticated = false;
 
   ngOnInit(): void {
+    this.authenticated = this.auth.isAuth;
     this.auth.tokenSubject.subscribe(
       (response) => (this.authenticated = response)
     );
