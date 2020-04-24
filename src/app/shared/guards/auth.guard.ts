@@ -23,10 +23,10 @@ export class AuthGuard implements CanActivateChild {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (this.auth.isAuth === true) {
+    if (localStorage.getItem('token') !== null) {
       return true;
     } else {
-      return this.route.navigateByUrl('/pageNotAllowed');
+      return this.route.navigateByUrl('/home');
     }
   }
 }

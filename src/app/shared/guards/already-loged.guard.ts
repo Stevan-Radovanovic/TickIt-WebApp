@@ -26,7 +26,7 @@ export class AlreadyLogedGuard implements CanActivate {
     if (localStorage.getItem('token') === null) {
       return true;
     } else {
-      return this.route.navigateByUrl('/pageNotAllowed');
+      return this.route.navigateByUrl('/home');
     }
   }
 }
