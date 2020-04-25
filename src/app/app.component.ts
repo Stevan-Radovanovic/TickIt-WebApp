@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { slider } from './shared/animations/slider.animation';
 import { AuthService } from './shared/services/auth.service';
+import { DummyService } from './shared/services/dummy.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { AuthService } from './shared/services/auth.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  constructor(public auth: AuthService) {}
+  constructor(public auth: AuthService, public dummy: DummyService) {}
 
   ngOnInit(): void {
     this.auth.autoLogIn();

@@ -59,6 +59,7 @@ export class AuthService {
     }
     const now = new Date();
     const expiresIn = authInfo.expDate.getTime() - now.getTime();
+    console.log(expiresIn);
     if (expiresIn > 0) {
       this.token = authInfo.token;
       this.isAuth = true;
