@@ -1,7 +1,16 @@
 <figure class="image is-128x128">
   <img src="../../../../assets/logo.png" alt="" />
 </figure>
-<h3 class="title">{{ selectedEvent.name }}</h3>
+<h3
+  class="title"
+  style="
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: x-large;
+  "
+>
+  {{ selectedEvent.name }}
+</h3>
 <p>{{ selectedEvent.date }}</p>
 <a class="button" (click)="onChangeModal()">See More</a>
 
@@ -19,7 +28,7 @@
     </header>
     <section class="modal-card-body wrap">
       <h1 class="subtitle modalstyle">{{ selectedEvent.date }}</h1>
-      <p>{{ selectedEvent.description }}</p>
+      <p style="color: black;">{{ selectedEvent.description }}</p>
     </section>
     <footer class="modal-card-foot">
       <a class="button" routerLink="{{ selectedEvent._id }}">Buy Tickets</a>

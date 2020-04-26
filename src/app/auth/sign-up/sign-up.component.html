@@ -1,11 +1,14 @@
 <hr />
 <div class="columns">
   <div
-    class="column is-6 is-offset-3 card"
-    id="formBorder"
+    class="column is-6 is-offset-3 box"
+    id="shadow"
     style="text-align: center; color: black; padding-bottom: 4px;"
   >
-    <h1 class="title" style="font-family: 'Permanent Marker', cursive;">
+    <h1
+      class="title"
+      style="font-family: 'Permanent Marker', cursive; color: white;"
+    >
       Sign up to Tick-It now!
     </h1>
   </div>
@@ -15,11 +18,11 @@
   <mat-spinner></mat-spinner>
 </div>
 <div class="columns" *ngIf="!isLoading">
-  <div class="column is-6 is-offset-3 card" id="formBorder">
+  <div class="column is-6 is-offset-3 box" id="shadow">
     <form [formGroup]="signUpForm" (submit)="onSubmit()">
       <div class="field">
         <div class="control">
-          <label class="label">E-mail</label>
+          <label class="label" style="color: white;">E-mail</label>
           <input
             type="email"
             class="input"
@@ -39,7 +42,7 @@
       </div>
       <div class="field">
         <div class="control">
-          <label class="label">Password</label>
+          <label class="label" style="color: white;">Password</label>
           <input
             class="input"
             type="password"

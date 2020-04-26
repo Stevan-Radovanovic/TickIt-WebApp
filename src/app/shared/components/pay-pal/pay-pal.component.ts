@@ -23,12 +23,14 @@ export class PayPalComponent implements OnInit {
   @Input() selected: SportEvent = null;
   @Input() amount = 0;
   paidFor = false;
+  isLoading = false;
 
   constructor(private router: Router) {
     console.log(this.selected);
   }
 
   ngOnInit(): void {
+    this.isLoading = false;
     paypal
       .Buttons({
         createOrder: (data, actions) => {
@@ -45,6 +47,7 @@ export class PayPalComponent implements OnInit {
           });
         },
         onApprove: async (data, actions) => {
+          this.isLoading = true;
           const order = await actions.order.capture();
           console.log(order);
           this.paidFor = true;

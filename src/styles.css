@@ -9,10 +9,20 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-.card {
-  border: 7px inset #7b1fa2;
+.box {
+  /*border: 7px inset #7b1fa2;
   border-radius: 14px;
-  background-color: hsl(0, 0%, 96%);
+  background-color: hsl(0, 0%, 96%);*/
   width: 80%;
   margin: auto;
+}
+
+#shadow {
+  box-shadow: 10px 10px 5px 0px rgba(123, 31, 162, 1);
+  color: white;
+  background-color: black;
+}
+
+#shadow hr {
+  background-color: #7b1fa2;
 }

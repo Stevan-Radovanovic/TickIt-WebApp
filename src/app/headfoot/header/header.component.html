@@ -7,6 +7,9 @@
           alt="Logo Placeholder"
           style="max-width: 90px;"
         />
+        <p *ngIf="this.auth.isAuth" style="font-size: xx-small;">
+          You are now logged in!
+        </p>
       </figure>
     </a>
 

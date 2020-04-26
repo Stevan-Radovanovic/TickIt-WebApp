@@ -23,18 +23,10 @@ export class AuthService {
   logIn(mail: string, pass: string) {
     const authData: AuthData = { email: mail, password: pass };
     console.log(authData);
-    return this.http
-      .post<{ token: string }>('http://localhost:3000/users/login', authData)
-      .subscribe((response) => {
-        this.token = response.token;
-        this.tokenSubject.next(true);
-
-        const expDate = new Date(new Date().getTime() + 3600000);
-        this.saveAuthData(this.token, expDate);
-        this.isAuth = true;
-        this.autoLogOut(36000000);
-        this.router.navigateByUrl('/home');
-      });
+    return this.http.post<{ token: string }>(
+      'http://localhost:3000/users/login',
+      authData
+    );
   }
 
   logOut() {

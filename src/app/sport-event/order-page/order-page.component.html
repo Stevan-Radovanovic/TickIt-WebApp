@@ -2,7 +2,7 @@
   <mat-spinner></mat-spinner>
 </div>
 <div class="columns is-centered" style="margin-bottom: 2cm; margin-top: 2cm;">
-  <div class="column is-4 card">
+  <div class="column is-4 box" id="shadow">
     <p>{{ selectedEvent.name }}</p>
     <p>{{ selectedEvent.date }}</p>
     <h4>Select a Zone:</h4>
@@ -13,6 +13,7 @@
         >
       </select>
     </div>
+    <hr />
     <a
       class="button"
       style="background-color: #7b1fa2; color: white;"
@@ -21,8 +22,10 @@
     >
   </div>
   <hr />
-  <div *ngIf="!cartEmpty" class="column is-4 card">
-    <p class="card-header-title">Cart ({{ cummulativeValue }} EUR)</p>
+  <div *ngIf="!cartEmpty" class="column is-4 box" id="shadow">
+    <h1 class="title" style="color: white;">
+      Cart ({{ cummulativeValue }} EUR)
+    </h1>
     <div *ngFor="let ticket of cart">
       <div class="columns" style="text-align: center;">
         <div class="column is-4">

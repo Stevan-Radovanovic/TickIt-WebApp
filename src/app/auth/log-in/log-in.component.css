@@ -3,8 +3,7 @@
   color: white;
 }
 
-#formBorder {
-  border: 7px inset #7b1fa2;
-  border-radius: 14px;
-  background-color: hsl(0, 0%, 96%);
+::ng-deep .snackbar {
+  background-color: black;
+  color: #7b1fa2;
 }
