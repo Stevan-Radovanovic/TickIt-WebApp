@@ -1,6 +1,14 @@
-import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  Input,
+  Output,
+} from '@angular/core';
 import { SportEvent } from '../../models/sportevent.model';
 import { Router } from '@angular/router';
+import { EventEmitter } from 'protractor';
 
 declare var paypal;
 

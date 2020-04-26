@@ -1,7 +1,6 @@
 import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 import { SportEvent } from '../../shared/models/sportevent.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DummyService } from 'src/app/shared/services/dummy.service';
 import { Zone } from 'src/app/shared/models/zone.model';
 import { SportEventService } from 'src/app/shared/services/sport-event.service';
 
@@ -13,15 +12,17 @@ import { SportEventService } from 'src/app/shared/services/sport-event.service';
 export class OrderPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
-    private dummy: DummyService,
     private sport: SportEventService,
     private router: Router
   ) {}
 
+  isLoading = false;
   cummulativeValue = 0;
   selectedEvent: SportEvent = null;
   zones: Zone[] = [];
   selectedOption: string;
+  cartEmpty = true;
+  cart: string[] = [];
 
   ngOnInit(): void {
     // tslint:disable-next-line: no-string-literal
@@ -39,6 +40,10 @@ export class OrderPageComponent implements OnInit {
     const amount = +stringArray.pop();
     console.log(amount);
     console.log(stringArray);
+    this.cart.push('Ticket for ' + stringArray[0]);
     this.cummulativeValue = this.cummulativeValue + amount;
+    this.cartEmpty = false;
   }
+
+  onDelete(ticket: string) {}
 }

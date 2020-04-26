@@ -1,3 +1,6 @@
+<div *ngIf="isLoading" class="columns is-centered">
+  <mat-spinner></mat-spinner>
+</div>
 <div class="columns is-centered" style="margin-bottom: 2cm; margin-top: 2cm;">
   <div class="column is-4 card">
     <p>{{ selectedEvent.name }}</p>
@@ -16,6 +19,20 @@
       (click)="onAdd()"
       >Add to Cart</a
     >
+  </div>
+  <hr />
+  <div *ngIf="!cartEmpty" class="column is-4 card">
+    <p class="card-header-title">Cart ({{ cummulativeValue }} EUR)</p>
+    <div *ngFor="let ticket of cart">
+      <div class="columns" style="text-align: center;">
+        <div class="column is-4">
+          <p>{{ ticket }}</p>
+        </div>
+        <div class="column is-2 is-offset-2">
+          <button class="delete" (click)="onDelete(ticket)"></button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 <app-pay-pal
