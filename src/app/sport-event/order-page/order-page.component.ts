@@ -3,6 +3,7 @@ import { SportEvent } from '../../shared/models/sportevent.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DummyService } from 'src/app/shared/services/dummy.service';
 import { Zone } from 'src/app/shared/models/zone.model';
+import { SportEventService } from 'src/app/shared/services/sport-event.service';
 
 @Component({
   selector: 'app-order-page',
@@ -13,6 +14,7 @@ export class OrderPageComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private dummy: DummyService,
+    private sport: SportEventService,
     private router: Router
   ) {}
 
@@ -23,7 +25,9 @@ export class OrderPageComponent implements OnInit {
 
   ngOnInit(): void {
     // tslint:disable-next-line: no-string-literal
-    this.selectedEvent = this.dummy.getById(+this.route.snapshot.params['id']);
+    this.selectedEvent = this.sport.getSportEventById(
+      this.route.snapshot.params['id']
+    );
     if (this.selectedEvent === null || this.selectedEvent === undefined) {
       this.router.navigateByUrl('/pageNotFound');
     }

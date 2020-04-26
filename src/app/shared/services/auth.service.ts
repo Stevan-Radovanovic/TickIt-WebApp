@@ -65,6 +65,8 @@ export class AuthService {
       this.isAuth = true;
       this.autoLogOut(expiresIn);
       this.tokenSubject.next(true);
+    } else {
+      this.logOut();
     }
   }
 

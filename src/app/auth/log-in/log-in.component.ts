@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class LogInComponent implements OnInit {
   constructor(private auth: AuthService, private router: Router) {}
 
+  isLoading = false;
   logInForm: FormGroup;
   errorMessage: string = null;
 
@@ -23,9 +24,11 @@ export class LogInComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+    this.isLoading = false;
   }
 
   onSubmit() {
+    this.isLoading = true;
     const email = this.logInForm.controls.email.value;
     const password = this.logInForm.controls.password.value;
     this.auth.logIn(email, password);

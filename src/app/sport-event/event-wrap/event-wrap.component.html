@@ -1,5 +1,8 @@
 <hr />
-<div class="columns is-multiline">
+<div *ngIf="isLoading" class="columns is-centered">
+  <mat-spinner></mat-spinner>
+</div>
+<div *ngIf="!isLoading" class="columns is-multiline">
   <div
     class="column is-4 is-offset-1 card"
     *ngFor="let event of events"

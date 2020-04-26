@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 export class DummyService {
   events: SportEvent[] = [
     new SportEvent(
-      0,
+      '0',
       'Newcastle vs Partizan [Football]',
       '27.08.2003.',
       'Partizan in the first leg, at home, to a far superior opponent. Can they turn the game around at St. James Park?',
@@ -21,7 +21,7 @@ export class DummyService {
       ]
     ),
     new SportEvent(
-      1,
+      '1',
       'Partizan vs Maccabi [Basketball]',
       '01.04.2010.',
       'Potentialy the last game in the series. Can Partizan break the odds and advance to the Final Four?',
@@ -33,7 +33,7 @@ export class DummyService {
       ]
     ),
     new SportEvent(
-      2,
+      '2',
       'Cibona vs Partizan [Basketball]',
       '25.04.2010.',
       'Aba League Finals! Flying high from their EuroLeague success, Partizan goes to Zagreb to secure a clean sweep!',
@@ -45,7 +45,7 @@ export class DummyService {
       ]
     ),
     new SportEvent(
-      3,
+      '3',
       'Partizan - Barcelona [Basketball]',
       '03.02.2010.',
       'The spanish giant comes to Belgrade. Can they survive the fire of Pionir?',
@@ -57,7 +57,7 @@ export class DummyService {
       ]
     ),
     new SportEvent(
-      4,
+      '4',
       'Manchester United - Manchester City [Football]',
       '23.10.2011.',
       'The Manchester derby is here! Can the noisy neighbours finally dethrone Fergie and his Red Devils?',
@@ -69,7 +69,7 @@ export class DummyService {
       ]
     ),
     new SportEvent(
-      5,
+      '5',
       'Manchester City - Qpr [Football]',
       '13.05.2012.',
       `One win. That's all it takes for the 44 year wait to end. Can City rise up to the challenge?`,
@@ -81,7 +81,7 @@ export class DummyService {
       ]
     ),
     new SportEvent(
-      6,
+      '6',
       'Manchester City - West Ham [Football]',
       '11.05.2014',
       `Another trophy hangs is in reaching distance. Can the Cityzens snag it right in front of Liverpool's face?`,
@@ -93,7 +93,7 @@ export class DummyService {
       ]
     ),
     new SportEvent(
-      7,
+      '7',
       'Golden State - Cleveland [Basketball]',
       '19.06.2016',
       'LBJ or Curry? Irving or Thompson? One game will decide the champion.',
@@ -111,7 +111,7 @@ export class DummyService {
   saveEvents() {
     for (const event of this.events) {
       this.http
-        .post('http://localhost:3000/sportEvents/post', event)
+        .post('http://localhost:3000/sportEvents', event)
         .subscribe((response) => {
           console.log(response);
         });

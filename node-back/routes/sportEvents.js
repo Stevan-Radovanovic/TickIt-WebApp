@@ -3,12 +3,13 @@ const SportEvent = require('../models/sportEvent.model');
 
 const router = express.Router();
 
-router.get('/post', (req, res, next) => {
-  console.log('Poy');
-  res.end();
+router.get('/', (req, res, next) => {
+  SportEvent.find().then((documents) => {
+    res.status(200).json({ documents: documents });
+  });
 });
 
-router.post('/post', (req, res, next) => {
+router.post('/', (req, res, next) => {
   const event = new SportEvent({
     name: req.body.name,
     date: req.body.date,

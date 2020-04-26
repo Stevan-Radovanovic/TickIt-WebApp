@@ -38,6 +38,7 @@ export class PayPalComponent implements OnInit {
         },
         onApprove: async (data, actions) => {
           const order = await actions.order.capture();
+          console.log(order);
           this.paidFor = true;
           this.router.navigateByUrl('/events/success');
         },

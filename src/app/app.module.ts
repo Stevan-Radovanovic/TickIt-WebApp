@@ -10,7 +10,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './headfoot/footer/footer.component';
 import { HeaderComponent } from './headfoot/header/header.component';
 import { HomeComponent } from './home/home.component';
-import { MatSelectModule } from '@angular/material/select';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/services/token.interceptor';
 
@@ -23,7 +22,6 @@ import { TokenInterceptor } from './shared/services/token.interceptor';
     SharedModule,
     ReactiveFormsModule,
     AuthModule,
-    MatSelectModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
