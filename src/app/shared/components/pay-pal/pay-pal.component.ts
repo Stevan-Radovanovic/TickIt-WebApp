@@ -10,6 +10,7 @@ import { SportEvent } from '../../models/sportevent.model';
 import { Router } from '@angular/router';
 import { Order } from '../../models/order.model';
 import { AuthService } from '../../services/auth.service';
+import { OrderService } from '../../services/order.service';
 
 declare var paypal;
 
@@ -22,11 +23,16 @@ export class PayPalComponent implements OnInit {
   @ViewChild('paypal', { static: true }) paypalElement: ElementRef;
 
   @Input() selected: SportEvent = null;
+  @Input() stringTicket: string;
   @Input() amount = 0;
   paidFor = false;
   isLoading = false;
 
-  constructor(private router: Router, private auth: AuthService) {
+  constructor(
+    private router: Router,
+    private auth: AuthService,
+    private ord: OrderService
+  ) {
     console.log(this.selected);
   }
 
@@ -55,8 +61,10 @@ export class PayPalComponent implements OnInit {
             email: this.auth.email,
             eventName: this.selected.name,
             amount: this.amount + ' EUR',
-            ticket: 'Working on this',
+            ticket: this.stringTicket + ']',
+            date: this.selected.date,
           };
+          this.ord.createOrder(newOrder);
           console.log(newOrder);
           this.paidFor = true;
           this.router.navigateByUrl('/events/success');

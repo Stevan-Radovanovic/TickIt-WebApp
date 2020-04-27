@@ -16,6 +16,7 @@ export class OrderPageComponent implements OnInit {
     private router: Router
   ) {}
 
+  stringTicket = '[ ';
   isLoading = false;
   cummulativeValue = 0;
   selectedEvent: SportEvent = null;
@@ -41,6 +42,7 @@ export class OrderPageComponent implements OnInit {
     console.log(amount);
     console.log(stringArray);
     this.cart.push('Ticket for ' + stringArray[0]);
+    this.stringTicket = this.stringTicket + stringArray[0] + ' ';
     this.cummulativeValue = this.cummulativeValue + amount;
     this.cartEmpty = false;
   }
