@@ -8,7 +8,8 @@ import {
 } from '@angular/core';
 import { SportEvent } from '../../models/sportevent.model';
 import { Router } from '@angular/router';
-import { EventEmitter } from 'protractor';
+import { Order } from '../../models/order.model';
+import { AuthService } from '../../services/auth.service';
 
 declare var paypal;
 
@@ -25,7 +26,7 @@ export class PayPalComponent implements OnInit {
   paidFor = false;
   isLoading = false;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private auth: AuthService) {
     console.log(this.selected);
   }
 
@@ -50,6 +51,13 @@ export class PayPalComponent implements OnInit {
           this.isLoading = true;
           const order = await actions.order.capture();
           console.log(order);
+          const newOrder: Order = {
+            email: this.auth.email,
+            eventName: this.selected.name,
+            amount: this.amount + ' EUR',
+            ticket: 'Working on this',
+          };
+          console.log(newOrder);
           this.paidFor = true;
           this.router.navigateByUrl('/events/success');
         },

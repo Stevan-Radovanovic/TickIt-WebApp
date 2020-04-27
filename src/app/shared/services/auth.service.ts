@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
+  public email: string;
   public token: string;
   public isAuth = false;
   public tokenSubject = new BehaviorSubject(false);
@@ -22,6 +23,7 @@ export class AuthService {
 
   logIn(mail: string, pass: string) {
     const authData: AuthData = { email: mail, password: pass };
+    this.email = authData.email;
     console.log(authData);
     return this.http.post<{ token: string }>(
       'http://localhost:3000/users/login',
