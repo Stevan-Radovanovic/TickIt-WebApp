@@ -15,4 +15,10 @@ export class OrderService {
         console.log(response);
       });
   }
+
+  getOrdersByEmail(email: string) {
+    return this.http.get<{ orders: Order[]; message: string }>(
+      'http://localhost:3000/orders/mail'
+    );
+  }
 }

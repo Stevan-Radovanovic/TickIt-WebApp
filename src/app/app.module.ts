@@ -12,9 +12,10 @@ import { HeaderComponent } from './headfoot/header/header.component';
 import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/services/token.interceptor';
+import { OrderEmailComponent } from './order-email/order-email.component';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, AppComponent, HomeComponent],
+  declarations: [HeaderComponent, FooterComponent, AppComponent, HomeComponent, OrderEmailComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -6,6 +6,7 @@ import { Page404Component } from './shared/components/page404/page404.component'
 import { HomeComponent } from './home/home.component';
 import { AlreadyLogedGuard } from './shared/guards/already-loged.guard';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { OrderEmailComponent } from './order-email/order-email.component';
 
 const routes: Routes = [
   {
@@ -23,15 +24,21 @@ const routes: Routes = [
     canActivateChild: [AuthGuard],
   },
   {
+    path: 'orders',
+    component: OrderEmailComponent,
+    data: { animation: 'is3' },
+    canActivateChild: [AuthGuard],
+  },
+  {
     path: 'signup',
     component: SignUpComponent,
-    data: { animation: 'is3' },
+    data: { animation: 'is4' },
     canActivate: [AlreadyLogedGuard],
   },
   {
     path: 'login',
     component: LogInComponent,
-    data: { animation: 'is4' },
+    data: { animation: 'is5' },
     canActivate: [AlreadyLogedGuard],
   },
   {
