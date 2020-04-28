@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../shared/models/order.model';
 import { OrderService } from '../shared/services/order.service';
-import { AuthService } from '../shared/services/auth.service';
 
 @Component({
   selector: 'app-order-email',
@@ -12,13 +11,17 @@ export class OrderEmailComponent implements OnInit {
   orders: Order[] = [];
   isLoading = false;
 
-  constructor(private ord: OrderService, private auth: AuthService) {}
+  constructor(private ord: OrderService) {}
 
   ngOnInit(): void {
     this.isLoading = true;
-    this.ord.getOrdersByEmail(this.auth.email).subscribe((response) => {
-      this.orders = response.orders;
-      this.isLoading = false;
-    });
+    console.log(localStorage.getItem('email'));
+    this.ord
+      .getOrdersByEmail(localStorage.getItem('email'))
+      .subscribe((response) => {
+        console.log(response);
+        this.orders = response.orders;
+        this.isLoading = false;
+      });
   }
 }

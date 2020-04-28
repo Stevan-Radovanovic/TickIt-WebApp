@@ -13,9 +13,16 @@ import { HomeComponent } from './home/home.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './shared/services/token.interceptor';
 import { OrderEmailComponent } from './order-email/order-email.component';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent, AppComponent, HomeComponent, OrderEmailComponent],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    AppComponent,
+    HomeComponent,
+    OrderEmailComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,6 +30,7 @@ import { OrderEmailComponent } from './order-email/order-email.component';
     SharedModule,
     ReactiveFormsModule,
     AuthModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },

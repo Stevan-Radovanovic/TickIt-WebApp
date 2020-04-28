@@ -18,7 +18,12 @@ export class OrderService {
 
   getOrdersByEmail(email: string) {
     return this.http.get<{ orders: Order[]; message: string }>(
-      'http://localhost:3000/orders/mail'
+      'http://localhost:3000/orders/mail',
+      {
+        params: {
+          mail: email,
+        },
+      }
     );
   }
 }

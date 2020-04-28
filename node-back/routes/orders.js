@@ -24,9 +24,11 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/mail', (req, res, next) => {
-  Order.find({ email: req.body.email })
+  console.log(req.query.mail);
+  Order.find({ email: req.query.mail })
     .then((orders) => {
-      if (!orders) {
+      console.log(orders);
+      if (orders === []) {
         return res
           .status(404)
           .json({ orders: null, message: 'No orders so far!' });

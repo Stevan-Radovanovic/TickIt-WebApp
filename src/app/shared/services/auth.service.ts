@@ -23,7 +23,7 @@ export class AuthService {
 
   logIn(mail: string, pass: string) {
     const authData: AuthData = { email: mail, password: pass };
-    this.email = authData.email;
+    localStorage.setItem('email', authData.email);
     console.log(authData);
     return this.http.post<{ token: string }>(
       'http://localhost:3000/users/login',
@@ -72,6 +72,7 @@ export class AuthService {
   clearAuthData() {
     localStorage.removeItem('token');
     localStorage.removeItem('expDate');
+    localStorage.removeItem('email');
   }
 
   getAuthData() {

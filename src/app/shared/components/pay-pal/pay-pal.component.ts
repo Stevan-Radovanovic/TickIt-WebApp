@@ -58,7 +58,7 @@ export class PayPalComponent implements OnInit {
           const order = await actions.order.capture();
           console.log(order);
           const newOrder: Order = {
-            email: this.auth.email,
+            email: localStorage.getItem('email'),
             eventName: this.selected.name,
             amount: this.amount + ' EUR',
             ticket: this.stringTicket + ']',
