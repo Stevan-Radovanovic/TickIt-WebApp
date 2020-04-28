@@ -2,11 +2,14 @@
 <div *ngIf="isLoading" class="columns is-centered">
   <mat-spinner></mat-spinner>
 </div>
-<div *ngIf="!isLoading" class="columns is-centered">
-  <div class="column is-8">
-    <div *ngFor="let order of orders" class="column is-4 box" id="shadow">
-      <p>{{ order.eventName }} {{ order.ticket }}</p>
-    </div>
+<div *ngIf="!isLoading && orders.length === 0" class="columns is-centered">
+  <div class="column is-8 box" id="shadow">
+    <p>You haven't made any orders so far!</p>
+  </div>
+</div>
+<div *ngIf="!isLoading" class="columns is-centered is-multiline">
+  <div *ngFor="let order of orders" class="column is-8 box" id="shadow">
+    <p>[{{ order.eventName }} ] {{ order.ticket }} [{{ order.date }}]</p>
   </div>
 </div>
 <hr />
