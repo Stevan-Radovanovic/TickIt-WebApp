@@ -1,16 +1,10 @@
-import {
-  Component,
-  OnInit,
-  ViewChild,
-  ElementRef,
-  Input,
-  Output,
-} from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Input } from '@angular/core';
 import { SportEvent } from '../../models/sportevent.model';
 import { Router } from '@angular/router';
 import { Order } from '../../models/order.model';
 import { AuthService } from '../../services/auth.service';
 import { OrderService } from '../../services/order.service';
+import emailjs from 'emailjs-com';
 
 declare var paypal;
 
@@ -67,6 +61,23 @@ export class PayPalComponent implements OnInit {
           this.ord.createOrder(newOrder);
           console.log(newOrder);
           this.paidFor = true;
+          emailjs
+            .send(
+              'gmail',
+              'orderconfirmed',
+              {
+                eventName: newOrder.eventName,
+                email: newOrder.email,
+                date: newOrder.date,
+              },
+              'user_r3sH2XSB3C1hDEclKmPiJ'
+            )
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
           this.router.navigateByUrl('/events/success');
         },
         onError: (err) => {

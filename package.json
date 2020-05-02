@@ -25,6 +25,7 @@
     "bcrypt": "^4.0.1",
     "body-parser": "^1.19.0",
     "bulma": "^0.8.2",
+    "emailjs-com": "^2.4.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.9.10",
