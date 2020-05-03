@@ -29,10 +29,10 @@
     <div *ngFor="let ticket of cart">
       <div class="columns" style="text-align: center;">
         <div class="column is-4">
-          <p>{{ ticket }}</p>
+          <p>{{ ticket.name }}</p>
         </div>
         <div class="column is-2 is-offset-2">
-          <button class="delete" (click)="onDelete(ticket)"></button>
+          <button class="delete" (click)="onDelete(ticket.name)"></button>
         </div>
       </div>
     </div>

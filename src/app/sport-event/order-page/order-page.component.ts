@@ -23,7 +23,7 @@ export class OrderPageComponent implements OnInit {
   zones: Zone[] = [];
   selectedOption: string;
   cartEmpty = true;
-  cart: string[] = [];
+  cart: { name: string; amount: number }[] = [];
 
   ngOnInit(): void {
     // tslint:disable-next-line: no-string-literal
@@ -41,11 +41,20 @@ export class OrderPageComponent implements OnInit {
     const amount = +stringArray.pop();
     console.log(amount);
     console.log(stringArray);
-    this.cart.push('Ticket for ' + stringArray[0]);
+    this.cart.push({ name: 'Ticket for ' + stringArray[0], amount: +amount });
     this.stringTicket = this.stringTicket + stringArray[0] + ' ';
     this.cummulativeValue = this.cummulativeValue + amount;
     this.cartEmpty = false;
   }
 
-  onDelete(ticket: string) {}
+  onDelete(ticket) {
+    console.log('%c cart', 'color: pink; background-color: black');
+    const deleted = this.cart.filter((value) => value.name === ticket);
+    console.log(deleted);
+    this.cart = this.cart.filter((value) => value.name !== ticket);
+    this.cummulativeValue -= deleted[0].amount;
+    if (this.cart.length === 0) {
+      this.cartEmpty = true;
+    }
+  }
 }
