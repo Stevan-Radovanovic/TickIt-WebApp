@@ -63,7 +63,7 @@ export class PayPalComponent implements OnInit {
           this.paidFor = true;
           emailjs
             .send(
-              'gmail',
+              'default_service',
               'orderconfirmed',
               {
                 eventName: newOrder.eventName,
