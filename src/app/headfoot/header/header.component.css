@@ -13,7 +13,8 @@ a.navbar-item {
   font-size: large;
 }
 
-a.navbar-item:hover {
+a.navbar-item:hover,
+.active {
   background-color: #7b1fa2;
 }
 

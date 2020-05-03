@@ -7,9 +7,6 @@
           alt="Logo Placeholder"
           style="max-width: 90px;"
         />
-        <p *ngIf="this.auth.isAuth" style="font-size: xx-small;">
-          You are now logged in!
-        </p>
       </figure>
     </a>
 
@@ -35,10 +32,18 @@
     [ngClass]="{ 'is-active': toggleActive == true }"
   >
     <div *ngIf="authenticated" class="navbar-start">
-      <a class="navbar-item has-text-centered" routerLink="events">
+      <a
+        class="navbar-item has-text-centered"
+        routerLinkActive="active"
+        routerLink="events"
+      >
         Browse Events
       </a>
-      <a class="navbar-item has-text-centered" routerLink="orders">
+      <a
+        class="navbar-item has-text-centered"
+        routerLinkActive="active"
+        routerLink="orders"
+      >
         Order History
       </a>
     </div>
@@ -52,6 +57,12 @@
           <a *ngIf="!authenticated" class="button" routerLink="login">
             Log In
           </a>
+          <p
+            *ngIf="authenticated"
+            style="color: white; font-size: large; margin-right: 7px;"
+          >
+            You are now logged in!
+          </p>
           <a *ngIf="authenticated" class="button" (click)="onLogout()">
             Log out
           </a>
