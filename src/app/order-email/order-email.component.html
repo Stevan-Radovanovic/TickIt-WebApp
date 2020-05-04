@@ -9,7 +9,14 @@
 </div>
 <div *ngIf="!isLoading" class="columns is-centered is-multiline">
   <div *ngFor="let order of orders" class="column is-8 box" id="shadow">
-    <p>{{ order.eventName }} ] {{ order.ticket }} [{{ order.date }}]</p>
+    <hr />
+    <h1 class="is-title" style="font-family: 'Permanent Marker', cursive;">
+      {{ order.eventName }}
+    </h1>
+    <hr />
+    <p>The ticket(s) are for the following section(s): {{ order.ticket }}</p>
+    <p>Date: {{ order.date }}</p>
+    <hr />
   </div>
 </div>
 <hr />

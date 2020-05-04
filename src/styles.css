@@ -26,3 +26,7 @@ body {
 #shadow hr {
   background-color: #7b1fa2;
 }
+
+:root {
+  --myFont: 'Permanent Marker', cursive;
+}
